@@ -1,5 +1,5 @@
 ### Hi there 👋
-
+![AbdelRahman's GitHub stats](https://github-readme-stats.vercel.app/api?username=ad3ldev&show_icons=true&count_private=true)[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=ad3ldev&layout=compact)](https://github.com/anuraghazra/github-readme-stats)
 <!--
 **ad3ldev/ad3ldev** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
