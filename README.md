@@ -1,5 +1,12 @@
 ### Hi there 👋
-![AbdelRahman's GitHub stats](https://github-readme-stats.vercel.app/api?username=ad3ldev&show_icons=true&count_private=true)[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=ad3ldev&layout=compact)](https://github.com/anuraghazra/github-readme-stats)
+A very fast web/mobile developer that doesn't give up until the problem is solved
+
+[![AbdelRahman's GitHub stats](https://github-readme-stats.vercel.app/api?username=ad3ldev&show_icons=true&count_private=true)](https://github.com/anuraghazra/github-readme-stats)
+
+[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=ad3ldev&langs_count=10&layout=compact)](https://github.com/anuraghazra/github-readme-stats)
+
+<!-- [![AbdelRahman's wakatime stats](https://github-readme-stats.vercel.app/api/wakatime?username=ad3ldev)](https://github.com/anuraghazra/github-readme-stats) -->
+
 <!--
 **ad3ldev/ad3ldev** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
