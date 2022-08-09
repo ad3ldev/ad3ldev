@@ -1,3 +1,4 @@
+[![wakatime](https://wakatime.com/badge/user/8c445e02-c8e8-499b-a800-86da7400f9c8.svg)](https://wakatime.com/@8c445e02-c8e8-499b-a800-86da7400f9c8)
 ### Hi there 👋
 A very fast web/mobile developer that doesn't give up until the problem is solved
 
