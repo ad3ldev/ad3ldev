@@ -1,4 +1,3 @@
-[![wakatime](https://wakatime.com/badge/user/8c445e02-c8e8-499b-a800-86da7400f9c8.svg)](https://wakatime.com/@8c445e02-c8e8-499b-a800-86da7400f9c8)
 ### Hi there 👋
 A very fast web/mobile developer that doesn't give up until the problem is solved
 
@@ -6,7 +5,6 @@ A very fast web/mobile developer that doesn't give up until the problem is solve
 
 [![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=ad3ldev&langs_count=6&layout=compact)](https://github.com/anuraghazra/github-readme-stats)
 
-<!-- [![AbdelRahman's wakatime stats](https://github-readme-stats.vercel.app/api/wakatime?username=ad3ldev)](https://github.com/anuraghazra/github-readme-stats) -->
 <!--
 **ad3ldev/ad3ldev** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
