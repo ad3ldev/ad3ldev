@@ -3,7 +3,7 @@ A computer engineering student with 4 years of software engineering experience f
 
 [![AbdelRahman's GitHub stats](https://github-readme-stats.vercel.app/api?username=ad3ldev&show_icons=true&count_private=true)](https://github.com/anuraghazra/github-readme-stats)
 
-[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=ad3ldev&langs_count=6&layout=compact&exclude_repo=AndroidNanodegree,CSE352-PatternRecognition,CSE463-ParallelComputing)](https://github.com/anuraghazra/github-readme-stats)
+[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=ad3ldev&langs_count=6&layout=compact&exclude_repo=AndroidNanodegree)&hide=[jupyter%20notebook]](https://github.com/anuraghazra/github-readme-stats)
 
 <!--
 **ad3ldev/ad3ldev** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
