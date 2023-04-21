@@ -1,5 +1,5 @@
 ### Hi there 👋
-A computer engineering student with 4 years of software engineering experience filled to the brim without missing any opportunity to learn and explore the various tech stacks.
+A computer engineering student with 6 years of software engineering experience filled to the brim without missing any opportunity to learn and explore the various tech stacks.
 
 [![AbdelRahman's GitHub stats](https://github-readme-stats.vercel.app/api?username=ad3ldev&show_icons=true&count_private=true)](https://github.com/anuraghazra/github-readme-stats)
 
