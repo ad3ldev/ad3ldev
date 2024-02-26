@@ -11,7 +11,6 @@
 % Configure page margins with geometry
 \geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=0.8cm, footskip=.5cm}
 
-
 % Color for highlights
 % russell Colors: russell-emerald, russell-skyblue, russell-red, russell-pink, russell-orange
 %                 russell-nephritis, russell-concrete, russell-darknight, russell-purple
@@ -28,12 +27,15 @@
 \definecolor{link}{HTML}{0000FF}
 
 % Set false if you don't want to highlight section with russell color
-\setbool{acvSectionColorHighlight}{true}
+\setbool{acvSectionColorHighlight}{false}
 
 % If you would like to change the social information separator from a pipe (|) to something else
 \renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
-
-
+\renewcommand*{\headerfont}{\fontspec{SF Pro Text Medium}}
+\renewcommand*{\headerfontlight}{\fontspec{SF Pro Text Regular}}
+\renewcommand*{\footerfont}{\fontspec{SF Pro Text Heavy}}
+\renewcommand*{\bodyfont}{\fontspec{SF Pro Text Heavy}}
+\renewcommand*{\bodyfontlight}{\fontspec{SF Pro Text Regular}}
 %-------------------------------------------------------------------------------
 %	PERSONAL INFORMATION
 %	Comment any of the lines below if they are not required
@@ -62,7 +64,6 @@
 % \extrainfo{extra information}
 
 % \quote{``Simplicity is deceptively complicated."}
-
 %-------------------------------------------------------------------------------
 \begin{document}
 
