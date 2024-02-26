@@ -6,10 +6,10 @@
 % CONFIGURATIONS
 %-------------------------------------------------------------------------------
 % A4 paper size by default, use 'letterpaper' for US letter
-\documentclass[11pt, a4paper]{russell-modified}
+\documentclass[10pt, a4paper]{russell}
 
 % Configure page margins with geometry
-\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=0.8cm, footskip=.5cm}
 
 
 % Color for highlights
@@ -25,6 +25,7 @@
 % \definecolor{text}{HTML}{333333}
 % \definecolor{graytext}{HTML}{5D5D5D}
 % \definecolor{lighttext}{HTML}{999999}
+\definecolor{link}{HTML}{0000FF}
 
 % Set false if you don't want to highlight section with russell color
 \setbool{acvSectionColorHighlight}{true}
@@ -43,11 +44,11 @@
 % \position{Software Architect{\enskip\cdotp\enskip}Security Expert}
 
 %\dateofbirth{15/02/1998}
-\mobile{+201001202562}
-\email{ad3ldev@gmail.com}
-\homepage{ad3l.dev} 
-\github{ad3ldev}
-\linkedin{ad3ldev}
+\mobile{\textcolor{link}{+201001202562}}
+\email{\textcolor{link}{ad3ldev@gmail.com}}
+\homepage{\textcolor{link}{ad3l.dev}} 
+\github{\textcolor{link}{ad3ldev}}
+\linkedin{\textcolor{link}{ad3ldev}}
 % \gitlab{gitlab-id}
 % \stackoverflow{SO-id}{SO-name}
 % \twitter{@twit}
@@ -68,13 +69,6 @@
 % Print the header with above personal informations
 % Give optional argument to change alignment(C: center, L: left, R: right)
 \makecvheader
-
-% Print the footer with 3 arguments(<left>, <center>, <right>)
-% Leave any of these blank if they are not needed
-\makecvfooter
- {}
- {}
-  {\thepage}
 
 %-------------------------------------------------------------------------------
 %	CV/RESUME CONTENT
