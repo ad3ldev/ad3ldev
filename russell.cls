@@ -4,7 +4,6 @@
 \ProvidesClass{russell}[2017/02/05 v1.6.1 russell Curriculum Vitae Class]
 \NeedsTeXFormat{LaTeX2e}
 
-
 %-------------------------------------------------------------------------------
 %                Class options
 %
@@ -57,7 +56,6 @@
 \RequirePackage{roboto}
 \RequirePackage[default,opentype]{sourcesanspro}
 % Needed for the photo ID
-\RequirePackage[skins]{tcolorbox}
 % deal a paragraphs
 \RequirePackage{parskip}
 % deal hyperlink
@@ -128,6 +126,7 @@
 \definecolor{russell-concrete}{HTML}{95A5A6}
 \definecolor{russell-darknight}{HTML}{131A28}
 \definecolor{russell-black}{HTML}{000000}
+\definecolor{link}{HTML}{0000EE}
 \colorlet{russell}{russell-red}
 
 % Boolean value to switch section color highlighting
@@ -143,11 +142,11 @@
 %-------------------------------------------------------------------------------
 %                Configuration for fonts
 %-------------------------------------------------------------------------------
-\newcommand*{\headerfont}{\roboto}
-\newcommand*{\headerfontlight}{\robotolight}
-\newcommand*{\footerfont}{\sourcesanspro}
-\newcommand*{\bodyfont}{\sourcesanspro}
-\newcommand*{\bodyfontlight}{\sourcesansprolight}
+\newcommand*{\headerfont}{\fontspec{SF Pro Text Medium}}
+\newcommand*{\headerfontlight}{\fontspec{SF Pro Text Regular}}
+\newcommand*{\footerfont}{\fontspec{SF Pro Text Heavy}}
+\newcommand*{\bodyfont}{\fontspec{SF Pro Text Heavy}}
+\newcommand*{\bodyfontlight}{\fontspec{SF Pro Text Regular}}
 
 %-------------------------------------------------------------------------------
 %                Configuration for styles
@@ -203,23 +202,6 @@
 %-------------------------------------------------------------------------------
 %                Commands for personal information
 %-------------------------------------------------------------------------------
-% Define photo ID
-% Usage: \photo[circle|rectangle,edge|noedge,left|right]{<path-to-image>}
-\newcommand{\photo}[2][circle,edge,left]{%
-  \def\@photo{#2}
-  \@for\tmp:=#1\do{%
-    \ifthenelse{\equal{\tmp}{circle} \or \equal{\tmp}{rectangle}}%
-      {\let\@photoshape\tmp}{}%
-    \ifthenelse{\equal{\tmp}{edge} \or \equal{\tmp}{noedge}}%
-      {\let\@photoedge\tmp}{}%
-    \ifthenelse{\equal{\tmp}{left} \or \equal{\tmp}{right}}%
-      {\let\@photoalign\tmp}{}%
-  }%
-}
-\def\@photoshape{circle}
-\def\@photoedge{edge}
-\def\@photoalign{left}
-
 % Define writer's name
 % Usage: \name{<firstname>}{<lastname>}
 % Usage: \firstname{<firstname>}
@@ -231,14 +213,6 @@
 \newcommand*{\familyname}[1]{\def\@lastname{#1}}
 \def\@familyname{\@lastname}
 
-% Define writer's address
-% Usage: \address{<address>}
-\newcommand*{\address}[1]{\def\@address{#1}}
-
-% Define writer's position
-% Usage: \position{<position>}
-\newcommand*{\position}[1]{\def\@position{#1}}
-
 % Defines writer's mobile (optional)
 % Usage: \mobile{<mobile number>}
 \newcommand*{\mobile}[1]{\def\@mobile{#1}}
@@ -246,10 +220,6 @@
 % Defines writer's email (optional)
 % Usage: \email{<email address>}
 \newcommand*{\email}[1]{\def\@email{#1}}
-
-% Defines writer's date of birth (optional)
-% Usage: \dateofbirth{<date>}
-\newcommand*{\dateofbirth}[1]{\def\@dateofbirth{#1}}
 
 % Defines writer's homepage (optional)
 % Usage: \homepage{<url>}
@@ -259,82 +229,10 @@
 % Usage: \github{<github-nick>}
 \newcommand*{\github}[1]{\def\@github{#1}}
 
-% Defines writer's gitlab (optional)
-% Usage: \gitlab{<gitlab-nick>}
-\newcommand*{\gitlab}[1]{\def\@gitlab{#1}}
-
-% Defines writer's bitbucket (optional)
-% Usage: \bitbucket{<bitbucket-nick>}
-\newcommand*{\bitbucket}[1]{\def\@bitbucket{#1}}
-
-% Defines writer's stackoverflow profile (optional)
-% Usage: \stackoverflow{<so userid>}{<so username>}
-%   e.g.https://stackoverflow.com/users/123456/sam-smith
-%       would be \stackoverflow{123456}{sam-smith}
-\newcommand*{\stackoverflow}[2]{\def\@stackoverflowid{#1}\def\@stackoverflowname{#2}}
 
 % Defines writer's linked-in (optional)
 % Usage: \linkedin{<linked-in-nick>}
 \newcommand*{\linkedin}[1]{\def\@linkedin{#1}}
-
-% Defines writer's orcid (optional)
-% Usage: \orcid{<orcid-num>}
-\newcommand*{\orcid}[1]{\def\@orcid{#1}}
-
-% Defines writer's twitter (optional)
-% Usage: \twitter{<twitter handle>}
-\newcommand*{\twitter}[1]{\def\@twitter{#1}}
-
-% Defines writer's Mastodon (optional)
-% Usage: \mastodon{<instance>}{<mastodon-nick>}
-\newcommand*{\mastodon}[2]{\def\@mastodoninstance{#1}\def\@mastodonname{#2}}
-
-% Defines writer's resarchgate (optional)
-% Usage: \researchgate{<researchgate-account>}
-\newcommand*{\researchgate}[1]{\def\@researchgate{#1}}
-
-% Defines writer's skype (optional)
-% Usage: \skype{<skype account>}
-\newcommand*{\skype}[1]{\def\@skype{#1}}
-
-% Defines writer's reddit (optional)
-% Usage: \reddit{<reddit account>}
-\newcommand*{\reddit}[1]{\def\@reddit{#1}}
-
-% Defines writer's xing (optional)
-% Usage: \xing{<xing name>}
-\newcommand*{\xing}[1]{\def\@xing{#1}}
-
-% Defines writer's medium profile (optional)
-% Usage: \medium{<medium account>}
-\newcommand*{\medium}[1]{\def\@medium{#1}}
-
-% Defines writer's kaggle (optional)
-% Usage: \kaggle{<kaggle handle>}
-\newcommand*{\kaggle}[1]{\def\@kaggle{#1}}
-
-% Defines writer's google scholar profile (optional)
-% Usage: \googlescholar{<googlescholar userid>}{<googlescholar username>}
-% e.g.https://scholar.google.co.uk/citations?user=wpZDx1cAAAAJ
-% would be \googlescholar{wpZDx1cAAAAJ}{Name-to-display-next-icon}
-% If 'googlescholar-name' is not provided than it defaults to
-% '\firstname \lastname'
-\newcommand*{\googlescholar}[2]{%
-  \def\@googlescholarid{#1}%
-  \ifthenelse{\equal{#2}{}}{%
-    \def\@googlescholarname{\@firstname~\@lastname}%
-  }{%
-    \def\@googlescholarname{#2}%
-  }%
-}
-
-% Defines writer's extra information (optional)
-% Usage: \extrainfo{<extra information>}
-\newcommand*{\extrainfo}[1]{\def\@extrainfo{#1}}
-
-% Defines writer's quote (optional)
-% Usage: \quote{<quote>}
-\renewcommand*{\quote}[1]{\def\@quote{#1}}
 
 % Defines recipient's information (cover letter only)
 % Usage: \recipient{<recipient name>}{<recipient address>}
@@ -409,182 +307,28 @@
 %-------------------------------------------------------------------------------
 % Define a header for CV
 % Usage: \makecvheader
+% In russell.cls
 \newcommand*{\makecvheader}[1][C]{%
-  \newcommand*{\drawphoto}{%
-    \ifthenelse{\isundefined{\@photo}}{}{%
-      \newlength{\photodim}
-      \ifthenelse{\equal{\@photoshape}{circle}}%
-        {\setlength{\photodim}{1.3cm}}%
-        {\setlength{\photodim}{1.8cm}}%
-      \ifthenelse{\equal{\@photoedge}{edge}}%
-        {\def\@photoborder{darkgray}}%
-        {\def\@photoborder{none}}%
-      \begin{tikzpicture}%
-        \node[\@photoshape, draw=\@photoborder, line width=0.3mm, inner sep=\photodim, fill overzoom image=\@photo] () {};
-      \end{tikzpicture}
-    }%
-  }
-  \newlength{\headertextwidth}
-  \newlength{\headerphotowidth}
-  \ifthenelse{\isundefined{\@photo}}{
-    \setlength{\headertextwidth}{\textwidth}
-    \setlength{\headerphotowidth}{0cm}
-  }{%
-    \setlength{\headertextwidth}{0.76\textwidth}
-    \setlength{\headerphotowidth}{0.24\textwidth}
-  }%
-  \begin{minipage}[c]{\headerphotowidth}%
-    \ifthenelse{\equal{\@photoalign}{left}}{\raggedright\drawphoto}{}
-  \end{minipage}
-  \begin{minipage}[c]{\headertextwidth}
-    \ifthenelse{\equal{#1}{L}}{\raggedright}{\ifthenelse{\equal{#1}{R}}{\raggedleft}{\centering}}
-    \headerfirstnamestyle{\@firstname}\headerlastnamestyle{{}\acvHeaderNameDelim\@lastname}%
-    \\[\acvHeaderAfterNameSkip]%
-    \ifthenelse{\isundefined{\@position}}{}{\headerpositionstyle{\@position\\[\acvHeaderAfterPositionSkip]}}%
-    \ifthenelse{\isundefined{\@address}}{}{\headeraddressstyle{\@address\\[\acvHeaderAfterAddressSkip]}}%
+  \newlength{\headertextwidth}% 
+  \setlength{\headertextwidth}{\textwidth}% 
+  \begin{minipage}[c]{\headertextwidth}% 
+    \centering
+    \headerfirstnamestyle{\@firstname}\headerlastnamestyle{{}\acvHeaderNameDelim\@lastname}% 
+    \\[\acvHeaderAfterNameSkip]% 
     \headersocialstyle{%
-      \newbool{isstart}%
-      \setbool{isstart}{true}%
-      \ifthenelse{\isundefined{\@mobile}}%
-        {}%
-        {%
-          \href{tel:\@mobile}{\faMobile\acvHeaderIconSep\@mobile}%
-          \setbool{isstart}{false}%
-        }%
-      \ifthenelse{\isundefined{\@email}}%
-        {}%
-        {%
-          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{mailto:\@email}{\faEnvelope\acvHeaderIconSep\@email}%
-        }%
-      \ifthenelse{\isundefined{\@dateofbirth}}%
-        {}%
-        {%
-          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          % \mbox prevents wrapping of elements%
-          \mbox{\faBirthdayCake\acvHeaderIconSep\@dateofbirth}%
-        }%
-      \ifthenelse{\isundefined{\@homepage}}%
-        {}%
-        {%
-          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{http://\@homepage}{\faHome\acvHeaderIconSep\@homepage}%
-        }%
-      \ifthenelse{\isundefined{\@github}}%
-        {}%
-        {%
-          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://github.com/\@github}{\faGithubSquare\acvHeaderIconSep\@github}%
-        }%
-      \ifthenelse{\isundefined{\@gitlab}}%
-        {}%
-        {%
-          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://gitlab.com/\@gitlab}{\faGitlab\acvHeaderIconSep\@gitlab}%
-        }%
-      \ifthenelse{\isundefined{\@bitbucket}}%
-        {}%
-        {%
-          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://bitbucket.com/\@bitbucket}{\faBitbucket\acvHeaderIconSep\@bitbucket}%
-        }%
-      \ifthenelse{\isundefined{\@stackoverflowid}}%
-        {}%
-        {%
-          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://stackoverflow.com/users/\@stackoverflowid}{\faStackOverflow\acvHeaderIconSep\@stackoverflowname}%
-        }%
-      \ifthenelse{\isundefined{\@linkedin}}%
-        {}%
-        {%
-          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://www.linkedin.com/in/\@linkedin}{\faLinkedin\acvHeaderIconSep\@linkedin}%
-        }%
-      \ifthenelse{\isundefined{\@orcid}}%
-        {}%
-        {%
-          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://orcid.org/\@orcid}{\faOrcid\acvHeaderIconSep\@orcid}%
-        }%
-      \ifthenelse{\isundefined{\@twitter}}%
-        {}%
-        {%
-          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://twitter.com/\@twitter}{\faTwitter\acvHeaderIconSep\@twitter}%
-        }%
-      \ifthenelse{\isundefined{\@mastodonname}}%
-        {}%
-        {%
-          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://\@mastodoninstance/@\@mastodonname}{\faMastodon\acvHeaderIconSep\@mastodonname}%
-        }%
-      \ifthenelse{\isundefined{\@skype}}%
-        {}%
-        {%
-          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \faSkype\acvHeaderIconSep\@skype%
-        }%
-      \ifthenelse{\isundefined{\@reddit}}%
-        {}%
-        {%
-          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://www.reddit.com/user/\@reddit}{\faReddit\acvHeaderIconSep\@reddit}%
-        }%
-      \ifthenelse{\isundefined{\@researchgate}}%
-        {}%
-        {%
-          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://www.researchgate.net/profile/\@researchgate}{\faResearchgate\acvHeaderIconSep\@researchgate}%
-        }%
-      \ifthenelse{\isundefined{\@xing}}%
-        {}%
-        {%
-          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://www.xing.com/profile/\@xing}{\faXingSquare\acvHeaderIconSep\@xing}
-        }%
-      \ifthenelse{\isundefined{\@medium}}%
-        {}%
-        {%
-          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://medium.com/@\@medium}{\faMedium\acvHeaderIconSep\@medium}%
-        }%
-      \ifthenelse{\isundefined{\@kaggle}}%
-        {}%
-        {%
-          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://kaggle.com/\@kaggle}{\faKaggle\acvHeaderIconSep\@kaggle}%
-        }%
-      \ifthenelse{\isundefined{\@googlescholarid}}%
-        {}%
-        {%
-          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://scholar.google.com/citations?user=\@googlescholarid}{\faGraduationCap\acvHeaderIconSep\@googlescholarname}%
-        }%
-      \ifthenelse{\isundefined{\@extrainfo}}%
-        {}%
-        {%
-          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \@extrainfo%
-        }%
-    } \\[\acvHeaderAfterSocialSkip]%
-    \ifthenelse{\isundefined{\@quote}}%
-      {}%
-      {\headerquotestyle{\@quote\\}\vspace{\acvHeaderAfterQuoteSkip}}%
-  \end{minipage}%
-  \begin{minipage}[c]{\headerphotowidth}%
-    \ifthenelse{\equal{\@photoalign}{right}}{\raggedleft\drawphoto}{}
-  \end{minipage}
+    \href{tel:\@mobile}{\faMobile\acvHeaderIconSep\textcolor{link}{\@mobile}}
+    \acvHeaderSocialSep
+    \href{mailto:\@email}{\faEnvelope\acvHeaderIconSep\textcolor{link}\@email}
+    \acvHeaderSocialSep
+    \href{http://\@homepage}{\faHome\acvHeaderIconSep\textcolor{link}\@homepage}
+    \acvHeaderSocialSep
+    \href{https://github.com/\@github}{\faGithubSquare\acvHeaderIconSep\textcolor{link}\@github}%
+    \acvHeaderSocialSep
+    \href{https://www.linkedin.com/in/\@linkedin}{\faLinkedin\acvHeaderIconSep\textcolor{link}\@linkedin}%
+  }%
+    \\[\acvHeaderAfterSocialSkip]%
+  \end{minipage}% 
 }
-
-% Define a footer for CV
-% Usage: \makecvfooter{<left>}{<center>}{<right>}
-\newcommand*{\makecvfooter}[3]{%
-  \fancyfoot{}
-  \fancyfoot[L]{\footerstyle{#1}}
-  \fancyfoot[C]{\footerstyle{#2}}
-  \fancyfoot[R]{\footerstyle{#3}}
-}
-
 % Define a section for CV
 % Usage: \cvsection{<section-title>}
 \newcommand{\cvsection}[1]{%
@@ -714,205 +458,3 @@
   \end{justify}
   \vspace{-4.0mm}
 }
-
-
-%-------------------------------------------------------------------------------
-%                Commands for elements of Cover Letter
-%-------------------------------------------------------------------------------
-% Define an environment for cvletter
-\newenvironment{cvletter}{%
-  \lettertextstyle
-}{%
-}
-
-% Define a section for the cover letter
-% Usage: \lettersection{<section-title>}
-\newcommand{\lettersection}[1]{%
-  \par\addvspace{2.5ex}
-  \phantomsection{}
-  \lettersectionstyle{#1}
-  \color{sectiondivider}\vhrulefill{0.9pt}
-  \par\nobreak\addvspace{0.4ex}
-  \lettertextstyle
-}
-
-% Define a title of the cover letter
-% Usage: \makelettertitle
-\newcommand*{\makelettertitle}{%
-  \vspace{8.4mm}
-  \setlength\tabcolsep{0pt}
-  \setlength{\extrarowheight}{0pt}
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
-    \recipienttitlestyle{\@recipientname} & \letterdatestyle{\@letterdate}
-  \end{tabular*}
-  \begin{singlespace}
-    \recipientaddressstyle{\@recipientaddress} \\\\
-  \end{singlespace}
-  \ifthenelse{\isundefined{\@lettertitle}}
-    {}
-    {\lettertitlestyle{\@lettertitle} \\}
-  \lettertextstyle{\@letteropening}
-}
-
-% Define a closing of the cover letter
-% Usage: \makeletterclosing
-\newcommand*{\makeletterclosing}{%
-  \vspace{3.4mm}
-  \lettertextstyle{\@letterclosing} \\\\
-  \letternamestyle{\@firstname\ \@lastname}
-  \ifthenelse{\isundefined{\@letterenclosure}}
-    {\\}
-    {%
-      \\\\\\
-      \letterenclosurestyle{\@letterenclname: \@letterenclosure} \\
-    }
-}
-
-
- %-------------------------------------------------------------------------------
- %                Bibliography
- %-------------------------------------------------------------------------------
- %\RequirePackage[style=verbose, maxnames=99, sorting=ydnt]{biblatex}
- \RequirePackage[ % BibLaTeX
- 	sorting=ydnt, % Sorts entries by year (descending order), name, title
- 	style=verbose,
- 	doi=false,
- 	isbn=true,
- 	url=false,
- 	eprint=false,
- 	backref = false, % include back references in bibliography
- 	maxcitenames=3, % affects only the citations in the document body
- 	maxbibnames=99, % affects only the bibliography, pass 99 to print all
- 	hyperref=true,
- 	block=none,
- 	backend=biber % {Options: bibtex, biber}
- 	]{biblatex}
-
- % Avoid splitting entries across page break (only for 3 or fewer lines)
- % Tip: http://tex.stackexchange.com/a/51261
- \AtBeginEnvironment{thebibliography}{%
-    \clubpenalty10000
-    \@clubpenalty \clubpenalty
-    \widowpenalty10000
-    \interlinepenalty5000}
-
- % Customized format, based on Fancy CV template created by Adrien Friggeri
- \DeclareFieldFormat[article]{title}{#1\par}
- \DeclareFieldFormat[inproceedings]{title}{#1\par}
- \DeclareFieldFormat[misc]{title}{#1\par}
- \DeclareFieldFormat[report]{title}{#1\par}
- \DeclareFieldFormat[incollection]{title}{#1\par}
-
- \DeclareBibliographyDriver{article}{%
-   \fontsize{9pt}{1em}\bodyfont%
-   \printfield{title}%
-   \newblock%
-   \printnames{author}%
-   \par%
-   \newblock%
-   {%
-     \fontsize{8pt}{1em}\bodyfontlight\color{graytext}%
-     \usebibmacro{journal}%
-     \setunit{\space}%
-     \printfield{pages}%
-     \newunit%
-     \printlist{publisher}%
-     \setunit*{\addcomma\space}%
-     \printfield{year}%
-     \newunit%
-   }
-   \par\vspace{0.3\baselineskip}
- }
-
- \DeclareBibliographyDriver{inproceedings}{%
-   \fontsize{9pt}{1em}\bodyfont%
-   \printfield{title}%
-   \newblock%
-   \printnames{author}%
-   \par%
-   \newblock%
-   {%
-     \fontsize{8pt}{1em}\bodyfontlight\color{graytext}%
-     \printfield{booktitle}%
-     \setunit{\addcomma\space}%
-     \printfield{year}%
-     \setunit{\addcomma\space}%
-     \printlist{location}%
-     \newunit%
-   }
-   \par\vspace{0.3\baselineskip}
- }
-
- \DeclareBibliographyDriver{incollection}{%
-   \fontsize{9pt}{1em}\bodyfont%
-   \printfield{title}%
-   \newblock%
-   \printnames{author}%
-   \par%
-   \newblock%
-   {%
-     \fontsize{8pt}{1em}\bodyfontlight\color{graytext}%
-     \printfield{booktitle}%
-     \setunit{\addcomma\space}%
-     \printfield{year}%
-     \setunit{\addcomma\space}%
-     \printlist{location}%
-     \newunit%
-   }
-   \par\vspace{0.3\baselineskip}
- }
-
- \DeclareBibliographyDriver{misc}{%
-   \fontsize{9pt}{1em}\bodyfont%
-   \printfield{title}%
-   \newblock%
-   \printnames{author}%
-   \par%
-   \newblock%
-   {%
-     \fontsize{8pt}{1em}\bodyfontlight\color{graytext}%
-     \printfield{booktitle}%
-     \setunit*{\addcomma\space}%
-     \printfield{note}%
-     \setunit*{\addcomma\space}%
-     \printfield{year}%
-     \setunit{\addcomma\space}%
-     \printlist{location}%
-     \newunit%
-   }
-   \par\vspace{0.3\baselineskip}
- }
-
- \DeclareBibliographyDriver{report}{%
-   \fontsize{9pt}{1em}\bodyfont%
-   \printfield{title}%
-   \newblock%
-   \printnames{author}%
-   \par%
-   \newblock%
-   {%
-     \fontsize{8pt}{1em}\bodyfontlight\color{graytext}%
-     \printfield{type}%
-     \setunit{\space}%
-     \printfield{number}%
-     \setunit{\addcomma\space}%
-     \printfield{year}%
-     \newunit%
-   }
-   \par\vspace{0.3\baselineskip}
- }
-
- % New syntax for flexible backend (BibLaTeX > v3.3)
- \DeclareNameFormat{author}{%
-   \fontsize{9pt}{1em}\bodyfont%
-   \renewcommand*{\multinamedelim}{\addcomma\addspace}%
-   \nameparts{#1}%
-   \ifthenelse{\value{listcount}=1}
-     {\ifblank{\namepartgiven}{}{\namepartgiven\space}%
-     \namepartfamily}%
-     {\ifblank{\namepartgiven}{}{\namepartgiven\space}%
-     \namepartfamily}%
-   \ifthenelse{\value{listcount}<\value{liststop}}
-   {\addcomma\space}
-   {}
- }
