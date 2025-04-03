@@ -2,10 +2,10 @@
 % CONFIGURATIONS
 %-------------------------------------------------------------------------------
 % A4 paper size by default, use 'letterpaper' for US letter
-\documentclass[10pt, a4paper]{russell}
+\documentclass[12pt, a4paper]{russell}
 
 % Configure page margins with geometry
-\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=0.8cm, footskip=.5cm}
+\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
 
 \colorlet{russell}{russell-black}
 % Uncomment if you would like to specify your own color
@@ -41,9 +41,10 @@
 %	CV/RESUME CONTENT
 %	Each section is imported separately, open each file in turn to modify content
 %-------------------------------------------------------------------------------
+\input{cv/summary.tex}
 \input{cv/skills.tex}
 \input{cv/experience.tex}
-% \input{cv/projects.tex}
+\input{cv/projects.tex}
 \input{cv/certifications.tex}
 \input{cv/education.tex}
 
