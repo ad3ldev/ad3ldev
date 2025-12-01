@@ -22,7 +22,7 @@ Feel free to explore my repositories and reach out if you'd like to collaborate 
 -->
 
 ### 📊 GitHub Stats
-[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=ad3ldev&langs_count=20&l&layout=pie&exclude_repo=AndroidNanodegree&hide=jupyter%20notebook,mathematica)](https://github.com/anuraghazra/github-readme-stats)
+[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=ad3ldev&langs_count=20&layout=pie&exclude_repo=AndroidNanodegree&hide=jupyter%20notebook,mathematica)](https://github.com/anuraghazra/github-readme-stats)
 <a href="https://app.daily.dev/ad3ldev"><img src="https://api.daily.dev/devcards/v2/zAzkFThtcRGvzyqrgmjTu.png?type=default&r=8vj" width="356" alt="Adel's Dev Card"/></a>
 
 
