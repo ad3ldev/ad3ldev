@@ -15,18 +15,16 @@ Software engineer with 9+ years of experience exploring diverse tech stacks and 
 
 ### 📫 Let's Connect
 Feel free to explore my repositories and reach out if you'd like to collaborate or chat about tech! 
+Email: [me@ad3l.dev](mailto:me@ad3l.dev)
 
 ---
 
-<!---
 ### 📊 GitHub Stats
-[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=ad3ldev&langs_count=20&layout=pie&exclude_repo=AndroidNanodegree&hide=jupyter%20notebook,mathematica)](https://github.com/anuraghazra/github-readme-stats)
-<a href="https://app.daily.dev/ad3ldev"><img src="https://api.daily.dev/devcards/v2/zAzkFThtcRGvzyqrgmjTu.png?type=default&r=8vj" width="356" alt="Adel's Dev Card"/></a>
-
+![Stats](./profile/stats.svg)
+![Top Languages](./profile/top-langs.svg)
 
 <!-- <a href="https://app.daily.dev/ad3ldev"><img src="https://api.daily.dev/devcards/v2/zAzkFThtcRGvzyqrgmjTu.png?type=default&r=8vj" width="356" alt="Adel's Dev Card"/></a> -->
 
-Email: [me@ad3l.dev](mailto:me@ad3l.dev)
 <!--
 **ad3ldev/ad3ldev** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
