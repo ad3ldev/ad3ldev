@@ -20,9 +20,8 @@ Email: [me@ad3l.dev](mailto:me@ad3l.dev)
 ---
 
 ### 📊 GitHub Stats
-![Stats](./profile/stats.svg)
-
 ![Top Languages](./profile/top-langs.svg)
+<!-- ![Stats](./profile/stats.svg) -->
 
 <!-- <a href="https://app.daily.dev/ad3ldev"><img src="https://api.daily.dev/devcards/v2/zAzkFThtcRGvzyqrgmjTu.png?type=default&r=8vj" width="356" alt="Adel's Dev Card"/></a> -->
 
