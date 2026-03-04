@@ -15,7 +15,8 @@ Software engineer with 9+ years of experience exploring diverse tech stacks and 
 
 ### 📫 Let's Connect
 Feel free to explore my repositories and reach out if you'd like to collaborate or chat about tech! 
-Email: [me@ad3l.dev](mailto:me@ad3l.dev)
+
+- Email: [me@ad3l.dev](mailto:me@ad3l.dev)
 
 ---
 
