@@ -17,21 +17,13 @@
     {Jan. 2026 - Present} % Date(s)
     {
       \begin{cvitems} % Description(s) of tasks/responsibilities
-        \item {Led a 6-engineer team (2 senior, 4 junior) to deliver multiple internal logistics products in 7 months, authoring 2,400+ of 4,700+ commits ($\sim$51\%) while setting architecture, code standards, and review practices and mentoring junior developers.}
-        \item {Directed a 3-engineer team to architect an end-to-end logistics modernization pipeline: a paperless probill workflow with ISAAC tablet integration and digital signatures, an automated pricing engine on the Microsoft Dynamics 365 API, and a real-time fleet dashboard processing 45+ telemetry parameters.}
-        \item {Led a 5-engineer architectural audit of a legacy IBM DB2 system, diagnosing systemic anomalies, inconsistencies, and corruption in a 20.2M-row denormalized dataset, and designed a BCNF-compliant target schema projected to cut storage $\sim$53$\times$ while eliminating referential integrity anomalies.}
-        \item {Built a custom TypeScript ORM for IBM DB2 for i powering 75 repositories, with a typed query language (comparison, set, null, and pattern operators; nested AND/OR/NOT; column projection; cursor pagination) whose return types follow its arguments, executable both as SQL and in memory against cached rows with identical SQL three-valued NULL semantics enforced at compile time.}
-        \item {Engineered a custom DB2 for i query compiler and Kysely dialect (driver, connection, introspector, migrator) with 30+ AST visitor overrides that route tables to the correct IBM i library, emulate RETURNING on INSERT, UPDATE, and DELETE, reject unsupported constructs before execution, and automatically split statements exceeding the 7,000-variable and 2 MB limits, covered by 112 dialect tests.}
-        \item {Cut page load times from $\sim$30 s to $\sim$2 s and reduced load on a legacy DB2 database by designing a cached repository base class that serves point, list, and whole-table reads from Redis with filtering, projection, and pagination applied in memory, deduplicates concurrent identical reads and writes into one round trip, and pages by keyset with opaque bidirectional cursors shared by cache and database.}
-        \item {Made correctness-critical reads, such as the invoice release gate, safe to cache by replacing never-invoked invalidation hooks with a declarative, schema-typed dependency registry: caches declare the foreign tables or columns they read, repositories declare the tables they write, and every write automatically patches, evicts, or invalidates dependents at row and column level.}
-        \item {Kept requests serving through Redis outages with best-effort caching that never fails a committed write, per-field TTLs set by data ownership, cold-or-complete snapshots that never serve a partial table, and generation guards that stop deduplicated writes from joining across intervening writes.}
-        \item {Architected a Turborepo monorepo of 4 applications and 6 shared packages (158K+ lines of TypeScript), unifying database access, server utilities, types, i18n, and UI under a single build and CI pipeline, with automated semantic versioning that turns linted conventional commits into per-package version bumps, generated changelogs, and git tags across 11 workspaces (90+ releases, 480+ tags).}
-        \item {Designed a typesafe schema layer for 95 tables (34 legacy AS/400, 61 modern) with 1,000+ JSDoc-documented types and 102 versioned migrations, delivering end-to-end type safety from DB2 to the frontend.}
-        \item {Eliminated encoding and data-shape errors on writes to legacy AS/400 tables by centralizing DB2 string sanitization and type mapping in one shared layer.}
-        \item {Standardized bulk-write patterns across the data layer and backed it with a 1,700+ test suite run against the real DB2 database without mocks.}
-        \item {Removed secrets from repositories and developer machines company-wide by deploying a self-hosted Infisical instance and rolling it out as the centralized secrets manager for local development, CI, and deployed environments.}
-        \item {Built and published an internal React component package of 100+ components and hooks with Storybook documentation and accessibility checks, later folded into the monorepo with semantically versioned releases and generated changelogs (38 releases, now v2.6.1), consumed by every frontend across 68+ routes to enforce a consistent interface and eliminate duplicated UI code.}
-        \item {Deployed and operated a self-hosted Libredesk support platform with one inbox per environment, in-app ticket creation, and file attachments, and built a Microsoft Teams bridge so support requests are answered without leaving Teams.}
+        \item {Cut page load times from $\sim$30 s to $\sim$2 s with a Redis-backed repository cache featuring row- and column-level invalidation, making correctness-critical reads safe to cache while ensuring committed writes succeed independently of Redis availability.}
+        \item {Built a type-safe TypeScript ORM and Kysely dialect for IBM DB2 for i, adopted by 75 data-access repositories (112 tests). Supports SQL and in-memory query execution with matching NULL semantics, while handling IBM i quirks including library routing, missing \texttt{RETURNING}, and statement-size limits.}
+        \item {Led a 6-engineer team (2 senior, 4 junior) delivering multiple internal products for a major Canadian logistics company in 7 months, personally authoring 2,400+ of 4,700+ commits ($\sim$51\%) while establishing engineering standards and mentoring junior developers.}
+        \item {Led a 5-engineer audit of a legacy IBM DB2 system, identifying corruption and inconsistencies across a 20.2M-row denormalized dataset and designing a BCNF schema projected to reduce storage requirements by $\sim$53$\times$.}
+        \item {Architected a Turborepo monorepo (4 apps, 6 shared packages) with unified CI and automated semantic versioning (90+ releases). Built a shared React component library (100+ components, Storybook, accessibility checks) adopted across 68+ routes.}
+        \item {Engineered a bidirectional integration between Libredesk and Microsoft Teams, enabling developers to resolve support tickets without leaving Teams through synchronized messages, files, channel/thread mapping, and slash commands; implemented signed webhooks, persistent retry queues, and Playwright E2E tests.}
+        \item {Deployed self-hosted Infisical as the company-wide secrets management platform for local development, CI, and production, eliminating secrets from repositories and developer machines; also deployed self-hosted Libredesk with isolated support inboxes per environment.}
       \end{cvitems}
     }
     
@@ -43,13 +35,12 @@
     {May 2024 - Dec. 2025} % Date(s)
     {
       \begin{cvitems} % Description(s) of tasks/responsibilities
-        \item {Awarded "Born Builder" for embodying company values and delivering exceptional software solutions.}
+        \item {Led complete system reengineering from Electron/React to Rust/Tauri (25$\times$ faster, package size cut from 500MB to 25MB), then architected the transition to a secure web-based invoice platform with a Java Spring Boot backend, SSO integration, and end-to-end encryption.}
         \item {Designed multithreaded Go service handling SOAP-to-REST translation for 20,000 concurrent users.}
-        \item {Led complete system reengineering from Electron/React to Rust/Tauri, achieving 25x performance improvement and reducing package size from 500MB to 25MB.}
-        \item {Architected transition from desktop to secure web-based invoice platform with Java SpringBoot backend, SSO integration, and end-to-end encryption.}
         \item {Refactored authentication across 40+ files, replacing Redux with React Context and implementing secure session management.}
         \item {Established CI/CD infrastructure reducing deployment time by 60\% through parameterized templates and multi-stage Docker configurations.}
         \item {Implemented comprehensive testing framework (Cypress + Vitest) achieving 90\% code coverage and reducing regression issues by 75\%.}
+        \item {Awarded ``Born Builder'' for embodying company values and delivering exceptional software solutions.}
       \end{cvitems}
     }
     
@@ -62,11 +53,11 @@
     {Feb. 2023 - Feb. 2024} % Date(s)
     {
       \begin{cvitems} % Description(s) of tasks/responsibilities
+        \item {Optimized pipeline infrastructure, cutting build times from 12 to 4 minutes (3$\times$ faster) and saving 160+ engineering hours monthly.}
         \item {Built React frontend with Go microservice backend, increasing data collection effectiveness by 45\%.}
+        \item {Led refactoring initiative reducing a React component from 1,900 to 415 lines (78\% reduction), improving maintainability and readability.}
         \item {Developed JavaScript module for PDF/PPTX conversion, enhancing enterprise reporting capabilities.}
-        \item {Led refactoring initiative reducing React component from 1,900 to 415 lines (78\% reduction) while improving maintainability, and readability.}
-        \item{Optimized pipeline infrastructure achieving 300\% performance improvement, reducing build times from 12 to 4 minutes and saving 160+ engineering hours monthly.}
-        \item{Modernized application dependencies, reducing bug reports by 40\%.}
+        \item {Modernized application dependencies, reducing bug reports by 40\%.}
       \end{cvitems}
     }
     
@@ -79,12 +70,12 @@
     {
       \begin{cvitems} % Description(s) of tasks/responsibilities
       \item{Managed an IT infrastructure for 10+ professional architects with 99.9\% system availability.}
-        \item {Automated file structure validation using Python, saving 30+ hours per week.}
-        \item {Deployed automation framework for backups, compliance, and deployments, reducing overhead by 65\%.}
-        \item {Built server infrastructure with RAID 10 + Sophos Firewall, achieving 99.9\% uptime.}
+        \item {Automated file structure validation using Python, saving 30+ hours per week.}
+        \item {Deployed automation framework for backups, compliance, and deployments, reducing overhead by 65\%.}
+        \item {Built server infrastructure with RAID 10 and a Sophos firewall, achieving 99.9\% uptime.}
       \end{cvitems}
     }
-    %-------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
     
     
     % \cventry
